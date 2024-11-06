@@ -172,63 +172,41 @@ h6,
 }
 
 /* Mobile (max-width: 991.98px) version - Match style of large devices */
+
 @media (max-width: 768px) {
-    /* Make sure navbar has transparent background */
     .navbar {
-        display: flex;
-        justify-content: space-between; /* Space between brand and toggler */
-        align-items: center; /* Align items vertically */
-        background: transparent;  /* Transparent background */
-
-    }
-    .sticky-top.navbar-dark {
-        position: relative;
-        background: transparent;  /* Transparent background */
-        padding: 10px 15px;
-        display: flex;
-        justify-content: space-between;  /* Align navbar brand and toggler on the same line */
-        align-items: center;  /* Vertically align items */
-        width: 100%;
-        box-shadow: none;  /* Remove box shadow */
+        background: rgba(0, 0, 0, 0.8); /* Darker background for visibility */
     }
 
-    /* Make sure navbar-brand is clearly visible */
+    /* Centered brand text for mobile */
     .navbar-dark .navbar-brand h1 {
-        color: var(--primary);  /* Use a color that stands out */
-        font-size: 1.5rem;
-        margin: 0;
-        padding: 0;
+        font-size: 1.4rem;
+        color: var(--primary);
+        text-align: center;
+        width: 100%;
     }
 
-    /* Adjust toggler styles */
-    .navbar-dark .navbar-toggler {
-        border-color: var(--primary);  /* Toggler border color */
-        padding: 6px 12px;
-        flex-shrink: 0;
+    /* Stack navbar items vertically on mobile */
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .navbar-dark .navbar-toggler-icon {
-        color: var(--primary);  /* Set color of the icon */
-    }
-
-    /* Navbar links adjustments for mobile */
     .navbar-dark .navbar-nav .nav-link {
-        padding: 15px 10px; /* Adjust padding for mobile */
-        color: var(--dark);  /* Set nav-link color */
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.75rem;
+        color: #FFFFFF;
+        width: 100%; /* Full width for easier tapping */
+        text-align: center; /* Center-align links */
     }
-
-    .navbar-dark .navbar-nav .nav-link:hover,
-    .navbar-dark .navbar-nav .nav-link.active {
-        color: var(--primary);  /* Color when hovered or active */
-    }
-
-    /* Hide underline animation for mobile */
+    
+    /* Remove underline animation on mobile */
     .navbar-dark .navbar-nav .nav-link::before {
         display: none;
     }
 }
+
 
 /* Larger devices (min-width: 992px) */
 @media (min-width: 992px) {
