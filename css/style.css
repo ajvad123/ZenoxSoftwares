@@ -124,6 +124,7 @@ h6,
 
 
 /*** Navbar ***/
+/* Default navbar styles for large devices (992px and above) */
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Nunito', sans-serif;
     position: relative;
@@ -155,64 +156,56 @@ h6,
     border-color: var(--primary) !important;
 }
 
+/* Mobile (max-width: 991.98px) version - Exact style of large devices */
 @media (max-width: 991.98px) {
-    /* Adjust navbar for mobile view */
     .sticky-top.navbar-dark {
-        position: relative; /* Remove fixed position */
-        background-color: transparent !important; /* Force transparent background */
+        position: relative;
+        background: #FFFFFF;  /* Make the background white */
         padding: 10px 15px;
         display: flex;
-        align-items: center;
-        justify-content: space-between; /* Align brand and toggler on one line */
+        justify-content: space-between;  /* Align navbar brand and toggler on one line */
+        align-items: center;  /* Vertically align items */
     }
 
-    /* Navbar brand styling for mobile */
-    .navbar-dark .navbar-brand h1 {
-        color: var(--primary);
+    .navbar-dark .navbar-brand {
+        color: var(--primary);  /* Set the brand color */
         font-size: 1.5rem;
         margin: 0;
         padding: 0;
-        flex-grow: 1; /* Ensure brand takes up available space */
     }
 
-    /* Navbar toggler styling for mobile */
     .navbar-dark .navbar-toggler {
-        border-color: var(--primary);
+        border-color: var(--primary); /* Toggler color */
         padding: 6px 12px;
-        flex-shrink: 0; /* Ensure toggler doesn't shrink */
+        flex-shrink: 0;
     }
 
     .navbar-dark .navbar-toggler-icon {
-        color: var(--primary);
+        color: var(--primary);  /* Set color of the icon */
     }
 
-    /* Adjust navbar link styling for mobile */
     .navbar-dark .navbar-nav .nav-link {
-        padding: 8px 0;
-        color: var(--dark);
+        padding: 15px 10px; /* Adjust padding for mobile */
+        color: var(--dark);  /* Set nav-link color */
         font-size: 16px;
         font-weight: 500;
     }
 
-    /* Remove hover effects on mobile for simpler interaction */
-    .navbar-dark .navbar-nav .nav-link::before {
-        display: none;
-    }
-
-    /* Remove the active hover effect on nav links */
     .navbar-dark .navbar-nav .nav-link:hover,
     .navbar-dark .navbar-nav .nav-link.active {
-        color: var(--primary); /* Update color to primary on hover */
+        color: var(--primary);  /* Color when hovered or active */
     }
 
-    /* Dropdown styling for mobile */
-    .navbar-dark .navbar-nav .nav-item .dropdown-menu {
-        background-color: #FFFFFF;
-        padding: 10px 0;
+    .navbar-dark .navbar-nav .nav-link::before {
+        display: none;  /* Remove underline animation for mobile */
+    }
+
+    .sticky-top.navbar-dark .navbar-brand h1 {
+        color: var(--primary); /* Set brand color for mobile */
     }
 }
 
-
+/* Larger devices (min-width: 992px) */
 @media (min-width: 992px) {
     .navbar-dark {
         position: absolute;
@@ -222,7 +215,7 @@ h6,
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
-    
+
     .sticky-top.navbar-dark {
         position: fixed;
         background: #FFFFFF;
@@ -253,6 +246,7 @@ h6,
         color: var(--primary);
     }
 }
+
 
 
 .news_section{
