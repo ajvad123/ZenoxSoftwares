@@ -156,22 +156,47 @@ h6,
 }
 
 @media (max-width: 991.98px) {
+    /* Set navbar to relative positioning with a white background for mobile */
     .sticky-top.navbar-dark {
-        position: fixed;
-        background: #FFFFFF;
+        position: relative;
+        background-color: #FFFFFF;
+        padding: 10px 15px; /* Adds padding around the navbar for better mobile spacing */
     }
 
+    /* Adjust navbar brand text styling for mobile */
+    .navbar-dark .navbar-brand h1 {
+        color: var(--primary);
+        font-size: 1.5rem; /* Reduce font size for brand name on mobile */
+        margin: 0; /* Removes extra margins */
+    }
+
+    /* Adjust nav link padding, color, and font size for mobile */
     .navbar-dark .navbar-nav .nav-link,
     .navbar-dark .navbar-nav .nav-link.show,
     .sticky-top.navbar-dark .navbar-nav .nav-link {
-        padding: 5px 0;
+        padding: 8px 0; /* Smaller padding to fit better on mobile */
         color: var(--dark);
+        font-size: 16px; /* Slightly smaller font size for compact view */
+        font-weight: 500; /* Optional: lightens the font for a cleaner mobile view */
     }
 
-    .navbar-dark .navbar-brand h1 {
-        color: var(--primary);
+    /* Make sure dropdowns are styled consistently for mobile */
+    .navbar-dark .navbar-nav .nav-item .dropdown-menu {
+        background-color: #FFFFFF; /* Ensure dropdown menu visibility */
+        padding: 10px 0; /* Adds spacing around dropdown items */
+    }
+    
+    /* Optional: Collapse navbar on mobile */
+    .navbar-toggler {
+        border-color: var(--primary);
+        padding: 6px 12px; /* Adjust toggle button size for mobile */
+    }
+
+    .navbar-dark .navbar-toggler-icon {
+        color: var(--primary); /* Icon color matching primary color */
     }
 }
+
 
 @media (min-width: 992px) {
     .navbar-dark {
