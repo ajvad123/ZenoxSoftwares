@@ -149,33 +149,41 @@ h6,
 
 .navbar-dark .navbar-brand h1 {
     color: #FFFFFF;
+    font-size: 1.8rem; /* Adjust size if needed */
+    margin: 0;
 }
 
+/* Ensure navbar toggler is clearly visible */
 .navbar-dark .navbar-toggler {
     color: var(--primary) !important;
     border-color: var(--primary) !important;
 }
 
-/* Mobile (max-width: 991.98px) version - Exact style of large devices */
+/* Mobile (max-width: 991.98px) version - Match style of large devices */
 @media (max-width: 991.98px) {
+    /* Ensure navbar has transparent background */
     .sticky-top.navbar-dark {
         position: relative;
-        background: #FFFFFF;  /* Make the background white */
+        background: transparent;  /* Transparent background */
         padding: 10px 15px;
         display: flex;
-        justify-content: space-between;  /* Align navbar brand and toggler on one line */
+        justify-content: space-between;  /* Align navbar brand and toggler on the same line */
         align-items: center;  /* Vertically align items */
+        width: 100%;
+        box-shadow: none;  /* Remove box shadow */
     }
 
-    .navbar-dark .navbar-brand {
-        color: var(--primary);  /* Set the brand color */
+    /* Make sure navbar-brand is clearly visible */
+    .navbar-dark .navbar-brand h1 {
+        color: var(--primary);  /* Use a color that stands out */
         font-size: 1.5rem;
         margin: 0;
         padding: 0;
     }
 
+    /* Adjust toggler styles */
     .navbar-dark .navbar-toggler {
-        border-color: var(--primary); /* Toggler color */
+        border-color: var(--primary);  /* Toggler border color */
         padding: 6px 12px;
         flex-shrink: 0;
     }
@@ -184,6 +192,7 @@ h6,
         color: var(--primary);  /* Set color of the icon */
     }
 
+    /* Navbar links adjustments for mobile */
     .navbar-dark .navbar-nav .nav-link {
         padding: 15px 10px; /* Adjust padding for mobile */
         color: var(--dark);  /* Set nav-link color */
@@ -196,12 +205,9 @@ h6,
         color: var(--primary);  /* Color when hovered or active */
     }
 
+    /* Hide underline animation for mobile */
     .navbar-dark .navbar-nav .nav-link::before {
-        display: none;  /* Remove underline animation for mobile */
-    }
-
-    .sticky-top.navbar-dark .navbar-brand h1 {
-        color: var(--primary); /* Set brand color for mobile */
+        display: none;
     }
 }
 
@@ -246,7 +252,6 @@ h6,
         color: var(--primary);
     }
 }
-
 
 
 .news_section{
