@@ -125,6 +125,12 @@ h6,
 
 /*** Navbar ***/
 /* Default navbar styles for large devices (992px and above) */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand and toggler */
+    align-items: center; /* Align items vertically */
+}
+
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Nunito', sans-serif;
     position: relative;
@@ -157,11 +163,17 @@ h6,
 .navbar-dark .navbar-toggler {
     color: var(--primary) !important;
     border-color: var(--primary) !important;
+    padding: 6px 12px; /* Adjust padding if needed */
+    flex-shrink: 0;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    color: var(--primary);  /* Set color of the icon */
 }
 
 /* Mobile (max-width: 991.98px) version - Match style of large devices */
 @media (max-width: 991.98px) {
-    /* Ensure navbar has transparent background */
+    /* Make sure navbar has transparent background */
     .sticky-top.navbar-dark {
         position: relative;
         background: transparent;  /* Transparent background */
