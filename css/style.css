@@ -159,7 +159,7 @@ h6,
     /* Adjust navbar for mobile view */
     .sticky-top.navbar-dark {
         position: relative; /* Remove fixed position */
-        background-color: transparent; /* No background color */
+        background-color: transparent !important; /* Force transparent background */
         padding: 10px 15px;
         display: flex;
         align-items: center;
@@ -172,6 +172,18 @@ h6,
         font-size: 1.5rem;
         margin: 0;
         padding: 0;
+        flex-grow: 1; /* Ensure brand takes up available space */
+    }
+
+    /* Navbar toggler styling for mobile */
+    .navbar-dark .navbar-toggler {
+        border-color: var(--primary);
+        padding: 6px 12px;
+        flex-shrink: 0; /* Ensure toggler doesn't shrink */
+    }
+
+    .navbar-dark .navbar-toggler-icon {
+        color: var(--primary);
     }
 
     /* Adjust navbar link styling for mobile */
@@ -180,16 +192,6 @@ h6,
         color: var(--dark);
         font-size: 16px;
         font-weight: 500;
-    }
-
-    /* Navbar toggler styling for mobile */
-    .navbar-dark .navbar-toggler {
-        border-color: var(--primary);
-        padding: 6px 12px;
-    }
-
-    .navbar-dark .navbar-toggler-icon {
-        color: var(--primary);
     }
 
     /* Remove hover effects on mobile for simpler interaction */
@@ -205,7 +207,7 @@ h6,
 
     /* Dropdown styling for mobile */
     .navbar-dark .navbar-nav .nav-item .dropdown-menu {
-        background-color: #de8080;
+        background-color: #FFFFFF;
         padding: 10px 0;
     }
 }
