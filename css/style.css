@@ -234,7 +234,7 @@ h6,
 /* Extra Small Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
     .img {
-        height: 400px; /* Smaller height for very small screens */
+        height: 600px; /* Smaller height for very small screens */
     }
 
     .navbar-dark .navbar-brand h1 {
