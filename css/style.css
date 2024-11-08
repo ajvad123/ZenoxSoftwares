@@ -125,10 +125,11 @@ h6,
 
 /*** Navbar ***/
 /* Default navbar styles for large devices (992px and above) */
+/* General Styles */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space between brand and toggler */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -155,68 +156,98 @@ h6,
 
 .navbar-dark .navbar-brand h1 {
     color: #FFFFFF;
-    font-size: 1.8rem; /* Adjust size if needed */
+    font-size: 1.8rem;
     margin: 0;
 }
 
-/* Ensure navbar toggler is clearly visible */
+/* Navbar Toggler */
 .navbar-dark .navbar-toggler {
     color: var(--primary) !important;
     border-color: var(--primary) !important;
-    padding: 6px 12px; /* Adjust padding if needed */
+    padding: 6px 12px;
     flex-shrink: 0;
 }
 
 .navbar-dark .navbar-toggler-icon {
-    color: var(--primary);  /* Set color of the icon */
+    color: var(--primary);
 }
 
-/* Mobile (max-width: 991.98px) version - Match style of large devices */
-.img{
+.img {
     width: 100%;
 }
-@media (max-width:  768px) {
-    /* hero image size */
-    .img{
-        width: 100%;
-        height: 600px;
-    }
-    .navbar {
+
+/* Mobile Styles for All Devices (max-width: 991.98px) */
+@media (max-width: 992px) {
+    .navbar-dark {
         position: relative;
-        background: rgba(0, 0, 0, 0.8); /* Darker background for visibility */
-    }
-
-    /* Centered brand text for mobile */
-    .navbar-dark .navbar-brand h1 {
-        font-size: 1.4rem;
-        color: var(--primary);
-        text-align: center;
         width: 100%;
+        background: rgba(0, 0, 0, 0.8); /* Darker background for better visibility on mobile */
     }
 
-    /* Stack navbar items vertically on mobile */
+    .img {
+        height: auto; /* Adjusted for better responsiveness */
+    }
+
     .navbar-collapse {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .navbar-dark .navbar-nav .nav-link {
-        font-size: 1rem;
-        padding: 0.75rem;
-        color: #FFFFFF;
-        width: 100%; /* Full width for easier tapping */
-        text-align: center; /* Center-align links */
+    .navbar-dark .navbar-brand h1 {
+        font-size: 1.6rem;
+        color: var(--primary);
+        text-align: center;
+        width: 100%;
     }
-    
+
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1.2rem;
+        padding: 1rem;
+        color: #FFFFFF;
+        width: 100%;
+        text-align: center;
+    }
+
     /* Remove underline animation on mobile */
     .navbar-dark .navbar-nav .nav-link::before {
         display: none;
     }
 }
 
+/* Smaller Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .img {
+        height: 600px;
+    }
 
-/* Larger devices (min-width: 992px) */
+    .navbar-dark .navbar-brand h1 {
+        font-size: 1.4rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Extra Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .img {
+        height: 400px; /* Smaller height for very small screens */
+    }
+
+    .navbar-dark .navbar-brand h1 {
+        font-size: 1.2rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Larger Devices (min-width: 992px) */
 @media (min-width: 992px) {
     .navbar-dark {
         position: absolute;
@@ -257,7 +288,6 @@ h6,
         color: var(--primary);
     }
 }
-
 
 .news_section{
     width: 100%;
