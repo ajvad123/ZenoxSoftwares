@@ -185,7 +185,7 @@ h6,
     }
 
     .img {
-        height: 600px; /* Adjusted for better responsiveness */
+        height: auto; /* Adjusted for better responsiveness */
     }
 
     .navbar-collapse {
