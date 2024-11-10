@@ -175,6 +175,36 @@ h6,
 .img {
     width: 100%;
 }
+/* toast */
+
+.toast-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 200px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1050;
+}
+
+.toast-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-message.success {
+    background-color: #28a745; /* Success green */
+}
+
+.toast-message.error {
+    background-color: #dc3545; /* Error red */
+}
+
 
 /* Mobile Styles for All Devices (max-width: 991.98px) */
 @media (max-width: 992px) {

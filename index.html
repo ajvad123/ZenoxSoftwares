@@ -588,9 +588,22 @@
             </div>
         </div>
     </div>
+    <div id="customToast" class="toast-message"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        document.getElementById('quoteForm').addEventListener('submit', function (event) {
+        function showToast(message, type) {
+            const toast = document.getElementById('customToast');
+            toast.textContent = message;
+            toast.className = `toast-message show ${type}`; // 'type' can be 'success' or 'error'
+
+            // Hide the toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
             const name = document.getElementById('name').value;
@@ -598,14 +611,17 @@
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value;
 
-            // console.log("Name:", name);
-            // console.log("Email:", email);
-            // console.log("Service:", service);
-            // console.log("Message:", message);
+            const data = { name, email, service, message };
 
-            const data={name,email,service,message}
-            console.log("Data:",data);
-            
+            axios.post('https://zenoxserver.onrender.com/softEnq', data)
+                .then(response => {
+                    console.log('Data sent successfully:', response.data);
+                    showToast('Your request has been sent successfully!', 'success');
+                })
+                .catch(error => {
+                    console.error('Error sending data:', error);
+                    showToast('There was an error sending your request. Please try again later.', 'error');
+                });
         });
     </script>
     <!-- Quote End -->
@@ -690,7 +706,7 @@
                     <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                         <div class="team-item bg-light rounded overflow-hidden">
                             <div class="team-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                                <img class="img-fluid w-100"  style="height: 450px;"  src="img/team-2.jpg" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
                                             class="fab fa-twitter fw-normal"></i></a>
@@ -703,15 +719,15 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <h4 class="text-primary">Mohammad Ajvad</h4>
-                                <p class="text-uppercase m-0">Project Coordinator</p>
+                                <h4 class="text-primary">Mohammed Rafeeq M</h4>
+                                <p class="text-uppercase m-0">founder and CEO</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                         <div class="team-item bg-light rounded overflow-hidden">
                             <div class="team-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
+                                <img class="img-fluid w-100" src="img/team-4.jpg" style="height: 450px;" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
                                             class="fab fa-twitter fw-normal"></i></a>
@@ -724,15 +740,57 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <h4 class="text-primary">Full Name</h4>
-                                <p class="text-uppercase m-0">Designation</p>
+                                <h4 class="text-primary">Samseer Mannissery</h4>
+                                <p class="text-uppercase m-0">co-Founder and CFO</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100 "  style="height: 450px;" src="img/team-5.webp" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-twitter fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-facebook-f fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-instagram fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-linkedin-in fw-normal"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Unknown</h4>
+                                <p class="text-uppercase m-0">CFO</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100"  style="height: 450px;" src="img/team-1.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-twitter fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-facebook-f fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-instagram fw-normal"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                            class="fab fa-linkedin-in fw-normal"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Mohammed Ajvad</h4>
+                                <p class="text-uppercase m-0">Project Manager</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
                         <div class="team-item bg-light rounded overflow-hidden">
                             <div class="team-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
+                                <img class="img-fluid w-100"  style="height: 450px;" src="img/team-3.jpg" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
                                             class="fab fa-twitter fw-normal"></i></a>
@@ -745,8 +803,8 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <h4 class="text-primary">Full Name</h4>
-                                <p class="text-uppercase m-0">Designation</p>
+                                <h4 class="text-primary">Jaison</h4>
+                                <p class="text-uppercase m-0">Service engineer</p>
                             </div>
                         </div>
                     </div>
